@@ -1,0 +1,11 @@
+[workspace]
+resolver = "3"
+members = ["crates/*"]
+
+[workspace.package]
+authors = ["Сырцев Вадим Игоревич <syrtcevvi@gmail.com>"]
+rust-version = "1.92"
+edition = "2024"
+license = "MIT"
+homepage = "https://github.com/syrtcevvi/weather-forecast-station"
+repository = "https://github.com/syrtcevvi/weather-forecast-station"
