@@ -1,8 +1,5 @@
 use embedded_graphics::{
-    mono_font::{
-        MonoTextStyle,
-        ascii::FONT_6X9,
-    },
+    mono_font::{MonoTextStyle, ascii::FONT_6X9},
     prelude::*,
     primitives::{Line, PrimitiveStyle},
     text::Text,
@@ -35,6 +32,21 @@ fn main() -> Result<(), core::convert::Infallible> {
     .with_alignment(horizontal::Center)
     .arrange()
     .align_to(&display_area, horizontal::Center, vertical::Center)
+    .draw(&mut display)?;
+
+    let version = env!("CARGO_PKG_VERSION");
+    LinearLayout::vertical(
+        Chain::new(
+            Line::new(Point::zero(), Point::new(DISPLAY_WIDTH as i32, 0)).into_styled(line_style),
+        )
+        .append(Text::new(
+            &format!("v{}", version),
+            Point::zero(),
+            text_style,
+        )),
+    )
+    .arrange()
+    .align_to(&display_area, horizontal::Left, vertical::Bottom)
     .draw(&mut display)?;
 
     let mut simulator_window = Window::new(
