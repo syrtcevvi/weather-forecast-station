@@ -1,12 +1,13 @@
 use embedded_graphics::{
-    mono_font::{MonoTextStyle, ascii::FONT_6X9},
+    mono_font::{
+        MonoTextStyle,
+        ascii::FONT_6X9,
+    },
     prelude::*,
-    primitives::PrimitiveStyle,
+    primitives::{Line, PrimitiveStyle},
     text::Text,
 };
-use embedded_graphics_simulator::{
-    OutputSettingsBuilder, SimulatorDisplay, Window,
-};
+use embedded_graphics_simulator::{OutputSettingsBuilder, SimulatorDisplay, Window};
 use embedded_layout::{
     align::{Align, horizontal, vertical},
     layout::linear::LinearLayout,
@@ -23,7 +24,7 @@ fn main() -> Result<(), core::convert::Infallible> {
     let mut display = Display::new(Size::new(DISPLAY_WIDTH, DISPLAY_HEIGHT));
     let display_area = display.bounding_box();
 
-    let _line_style = PrimitiveStyle::with_stroke(Color::Black, 1);
+    let line_style = PrimitiveStyle::with_stroke(Color::Black, 1);
     let text_style = MonoTextStyle::new(&FONT_6X9, Color::Black);
 
     LinearLayout::vertical(Chain::new(Text::new(
