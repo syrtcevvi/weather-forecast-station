@@ -10,9 +10,7 @@ homepage.workspace = true
 repository.workspace = true
 
 [dependencies]
+weather-forecast-station-ui = { path = "../weather-forecast-station-ui" }
+
 embedded-graphics-simulator = "0.8.0"
 embedded-graphics = "0.8.1"
-embedded-layout = "0.4.2"
-
-# TODO Create fork for this crate
-epd-waveshare = {features = ["graphics"], git = "https://github.com/ImplFerris/epd-waveshare", branch = "1in54_v2_fix" }

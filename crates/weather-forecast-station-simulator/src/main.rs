@@ -1,13 +1,8 @@
-mod layouts;
-mod sections;
-mod widgets;
-
 use embedded_graphics::prelude::*;
 use embedded_graphics_simulator::{OutputSettingsBuilder, SimulatorDisplay, Window};
 
-use crate::layouts::default_layout::DefaultLayout;
+use weather_forecast_station_ui::{layouts::DefaultLayout, types::Color};
 
-type Color = epd_waveshare::color::Color;
 type Display = SimulatorDisplay<Color>;
 
 const DISPLAY_HEIGHT: u32 = 128;

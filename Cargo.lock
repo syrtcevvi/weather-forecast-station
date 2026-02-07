@@ -397,6 +397,14 @@ version = "0.1.0"
 dependencies = [
  "embedded-graphics",
  "embedded-graphics-simulator",
+ "weather-forecast-station-ui",
+]
+
+[[package]]
+name = "weather-forecast-station-ui"
+version = "0.1.0"
+dependencies = [
+ "embedded-graphics",
  "embedded-layout",
  "epd-waveshare",
 ]
